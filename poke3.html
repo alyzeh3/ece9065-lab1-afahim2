@@ -29,11 +29,64 @@ li {
   float: left;
 
 }
+
+.search input[type=text] {
+  float: bottom;
+  padding: 6px;
+  margin-top: 8px;
+  margin-left: 15px;
+  border: none;
+  font-size: 17px;
+}
+.search {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+.search .search-container button:hover {
+  background: #ccc;
+}
+.search button {
+  background: #2F4F4F;
+  padding: 14px 20px;
+  margin-left: 10px;
+  border: black;
+  margin-bottom:5px ;
+ 
+}
+
+}
 </style>
 </head>
 <body>
 <h2>Pokedex</h2>
 
+
+<div class="search">
+    <form action="/action_page.php"></form>
+    <input type="text" placeholder="Search By Letter">
+    <button onclick="myFunction()">Search</button>
+    
+    <input type="text" placeholder="Search by Number">
+    <button onclick="myFunction1()">Search</button>
+
+</form>
+  </div>
+  <p id="demo"></p>
+  <script>
+    function myFunction() {
+    
+      document.getElementById("demo").innerHTML = "Hello World";
+     
+    }
+    </script>
+<p id="demo1"></p>
+<script>
+    function myFunction1() {
+    
+      document.getElementById("demo1").innerHTML = "Hello";
+     
+    }
+    </script>
 <ul>
     <figure>
     <li><img src = "1.png"</li>
@@ -170,10 +223,7 @@ li {
         20 Raticate Wild
     .</figcaption>
 </figure>
-<div class="topnav">
-    <input type="text" placeholder="Search By Letter">
-    <input type="text" placeholder="Search by Number">
-  </div>
+
 
 </ul>
 </body>

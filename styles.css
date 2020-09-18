@@ -1,3 +1,4 @@
+<!DOCTYPE style>
 <style>
 ul {
   list-style-type: none;
@@ -16,17 +17,17 @@ figcaption {
   text-align: center;
 }
 img {
-        
         padding: 1px;
         border: 1px #A9A9A9;
         border-style: groove;
         background-color: #eee;
       }
 li {
-  float: left;
+  float: left;}
+ul {
 
+    list-style: none
 }
-
 .search input[type=text] {
   float: bottom;
   padding: 6px;

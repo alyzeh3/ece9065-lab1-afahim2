@@ -4,12 +4,14 @@
 
 </head>
 <link rel="stylesheet" href="styles.css">
+<a href="Lab1-pokemon-data1.htm">The Link</a>
+
 <body>
 <h2>Pokedex</h2>
 
 <div class="search">
     <form action="/action_page.php"></form>
-    <input type="text" placeholder="Search By Letter">
+    <input type="text" id="myInput" onkeyup="myFunction2()" placeholder="Search By Letter"  >
     <button onclick="myFunction()">Search</button>
     
     <input type="text" placeholder="Search by Number">
@@ -20,17 +22,15 @@
   <p id="demo"></p>
   <script>
     function myFunction() {
-    
-      document.getElementById("demo").innerHTML = "Hello World";
-     
+     document.getElementById("demo").innerHTML = "Hello World";     
     }
     </script>
+
 <p id="demo1"></p>
+
 <script>
     function myFunction1() {
-    
       document.getElementById("demo1").innerHTML = "Hello";
-     
     }
     </script>
 <ul>
@@ -169,8 +169,28 @@
         20 Raticate Wild
     .</figcaption>
 </figure>
-
-
 </ul>
+  
+<script>
+    function myFunction2() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    </script>
+    
 </body>
 </html>

@@ -14,7 +14,7 @@
 <div class="search">
     <form action="/action_page.php"></form>
     <input class = "popup" type="search" id="myInput" onsearch="myFunction2()" placeholder = "Search by Letter">
-    <input type="search" id="myInput" onsearch="myFunction3()" placeholder = "Search By Number">
+    <input class= "popup" type="search" id="myInput1" onsearch="myFunction3()" placeholder = "Search By Number">
 </form>
   </div>
 
@@ -21864,7 +21864,7 @@
 <script>
     function myFunction3() {
       var input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("myInput");
+      input = document.getElementById("myInput1");
       filter = input.value.toUpperCase();
       table = document.getElementById("myTable");
       tr = table.getElementsByTagName("tr");
@@ -21874,6 +21874,7 @@
           txtValue = td.textContent || td.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
             tr[i].style.display = "";
+            alert(tr[i].textContent);
           } else {
             tr[i].style.display = "none";
           }

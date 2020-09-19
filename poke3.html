@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="header">
 <h2>Pokedex</h2>
 </div>
@@ -10,13 +10,11 @@
  
 <body>
 
-<div class="search">
-    <form action="/action_page.php"></form>
-    <input class = "search" type="search" id="myInput" onsearch="myFunction2()" placeholder = "Search by Letter">
-    <input class= "search1" input type="number" type="search1" id="myInput1" onsearch="myFunction3()" placeholder = "Search By Number (Enter Numbers 1-20)">
-</form>
-  </div>
-
+<class="search">
+    
+    <input class = "search" class="popuptext" class="popup" type="search" id="myInput" onsearch="myFunction2()"placeholder = "Search by Letter" > 
+    <input class= "search" input type = "text" type="search" id="myInput1" onsearch="myFunction4()" placeholder = "Search By Number">
+    
 <p id="demo1"></p>
 <script>
     function myFunction1() {
@@ -21838,7 +21836,10 @@
     </tbody></table>
     <script>
         function myFunction2() {
+            alert("Hell!!!!!!!!!!!!!!!!!!!");
           var input, filter, table, tr, td, i, txtValue, txValue1;
+          var popup = document.getElementById("myInput");
+          
           input = document.getElementById("myInput");
           filter = input.value.toUpperCase();
           table = document.getElementById("myTable");
@@ -21859,19 +21860,30 @@
         }
         
 </script>
-       
+
+<p id="demo2"></p>
+<script>
+    function myFunction4() {
+        alert("Hell!!!!!!!!!!!!!!!!!!!");
+        var input1, table1, tr1, td1, j;
+        table1 = document.getElementById("myTable");
+        tr1= table1.getElementsByTagName("tr");
+        input1 = document.getElementById("myInput1");
+        
+    
+</script>
 <script>
     function myFunction3() {
       var input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("myInput1");
+      input = document.getElementById("myInput22");
       filter = input.value.toUpperCase();
       table = document.getElementById("myTable");
       tr = table.getElementsByTagName("tr");
       for (i = 0; i < 22; i++) {
         td = tr[i].getElementsByTagName("td")[1];
         if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            txtValue = td.childNodes[1].nodeValue
+          if (txtValue.indexOf(filter)  > -1) {
             tr[i].style.display = "";
             alert(tr[i].textContent);
           } else {
@@ -21883,7 +21895,6 @@
     }
     
 </script>
-  
 
 
 </body>

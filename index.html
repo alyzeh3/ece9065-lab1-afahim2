@@ -43,7 +43,7 @@
 
 <h2>My Customers</h2>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<input type="search" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 
 <table id="myTable">
   <tr class="header">
@@ -97,6 +97,7 @@ function myFunction() {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
+        alert(tr[i].textContent);
       } else {
         tr[i].style.display = "none";
       }

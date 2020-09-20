@@ -1,3 +1,4 @@
+touch ~/.gitignore $ git config --global core.excludesFile ~/.gitignore 
 3-mega.png
 15-mega.png
 18-mega.png

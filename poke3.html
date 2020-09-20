@@ -13,7 +13,7 @@
 <class="search">
     
     <input class = "search" class="popuptext" class="popup" type="search" id="myInput" onsearch="myFunction2()"placeholder = "Search by Letter" > 
-    <input class= "search" input type = "text" type="search" id="myInput1" onsearch="myFunction4()" placeholder = "Search By Number">
+    <input class= "search1" type="search" id="myInput1" onsearch="myFunction6()" placeholder = "Search By Number">
     
 <p id="demo1"></p>
 <script>
@@ -158,7 +158,7 @@
     .</figcaption>
 </figure>
 </ul>
-<table id="myTable" hidden>
+<table id="myTable">
     <thead><tr><th title="Field #1">Name</th>
     <th title="Field #2">Number</th>
     <th title="Field #3">Generation</th>
@@ -21861,29 +21861,56 @@
         
 </script>
 
-<p id="demo2"></p>
+<p id="demo4"></p>
+
 <script>
-    function myFunction4() {
+    function myFunction4(input1) {
+        
+        
+        return input1 = document.getElementById("myInput1");
+</script>
+
+<script>
+    function myFunction7() {
         alert("Hell!!!!!!!!!!!!!!!!!!!");
-        var input1, table1, tr1, td1, j;
+</script>
+
+<script>
+    function myFunction6() {
+       
+        var table1, tr1, td1, j, input1, filter1, yay;
         table1 = document.getElementById("myTable");
         tr1= table1.getElementsByTagName("tr");
         input1 = document.getElementById("myInput1");
+        filter1 = input1;
+
+        for (j = 0; j < 22; j++) {
+            td1 = tr1[j].getElementsByTagName("td")[1];
+            var txtvalue 
+            txtvalue = td1.innerHTML;
+           yay =  txtvalue.indexOf(input1);
+            if (txtvalue.indexOf(input1) > -1) {
+                tr1[j].style.display = "";
+              } else {
+                tr1[j].style.display = "none";
+              }
+        }
         
-    
 </script>
+
 <script>
     function myFunction3() {
+        
       var input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("myInput22");
+      input = document.getElementById("myInput1");
       filter = input.value.toUpperCase();
       table = document.getElementById("myTable");
       tr = table.getElementsByTagName("tr");
       for (i = 0; i < 22; i++) {
         td = tr[i].getElementsByTagName("td")[1];
         if (td) {
-            txtValue = td.childNodes[1].nodeValue
-          if (txtValue.indexOf(filter)  > -1) {
+            txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter)  > -1) {
             tr[i].style.display = "";
             alert(tr[i].textContent);
           } else {

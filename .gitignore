@@ -6,6 +6,10 @@
 # JPEG
 *.csv
 
+#directory
+
+/node_modules
+
 /3-mega.png
 /15-mega.png
 /18-mega.png

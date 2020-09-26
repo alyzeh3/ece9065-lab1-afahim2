@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="header">
-<h2>Pokedex/h2>
+<h2>Pokedex</div></h2>
 </div>
 </head>
 <link rel="stylesheet" href="styles.css">
@@ -15,6 +15,13 @@
     <input class= "search1" type="search" id="myInput1" oninput="lab2num()" placeholder = "Search By Number">
     
 <p id="demo1"></p>
+<div myId = "list">
+
+<ul>
+
+<p>POKEMON!!!!!!!!!!!!!!!!!!!!!!</p>
+    </ul>
+</div>
 <script>
     function myFunction1() {
       document.getElementById("demo1").innerHTML = "Hello";
@@ -21935,6 +21942,7 @@ function lab2num()
         if (td) {
             txtValue = td.textContent || td.innerText;
           if (txtValue.toUpperCase().indexOf(filter)  > -1) {
+            alert("HELLLO")
             tr[i].style.display = "";
           } else {
             tr[i].style.display = "none";
@@ -21948,20 +21956,25 @@ function lab2num()
 <script>
 function lab2let()
 {
-    var input, filter, table, tr, td, i, txtValue, txValue1, new;
+    var input, filter, table, tr, td, i, txtValue, txValue1,h;
           var popup = document.getElementById("myInput");
           
           input = document.getElementById("myInput");
           filter = input.value.toUpperCase();
+          tab
           table = document.getElementById("myTable");
           tr = table.getElementsByTagName("tr");
           for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[0];
             if (td) {
-              txtValue = document.createTextNode(td);
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                document.body.appendChild(txtValue);
-                tr[i].style.display = "";
+                alert("Hello")
+                txtValue = document.createTextNode(td);
+              var  txtValue1 = td.textContent || td.innerText;
+            if (txtValue1.toUpperCase().indexOf(filter) > -1) {
+                  alert("Hello")
+                document.getElementById("list").appendChild(txtValue);
+                alert("Hello1111111111111")
+                  
                       } else {
                 tr[i].style.display = "none";
               }

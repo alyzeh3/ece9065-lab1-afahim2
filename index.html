@@ -15,12 +15,10 @@
     <input class= "search1" type="search" id="myInput1" oninput="lab2num()" placeholder = "Search By Number">
     
 <p id="demo1"></p>
-<div myId = "list">
-
-<ul>
-
-<p>POKEMON!!!!!!!!!!!!!!!!!!!!!!</p>
-    </ul>
+<div>
+    <ol id = "list">
+       <li>coffee</li>
+    </ol>
 </div>
 <script>
     function myFunction1() {
@@ -28,7 +26,7 @@
     }
     </script>
 
-<div id="myTable">
+<div id="myTable" hidden>
 <table >
     <thead><tr><th title="Field #1">Name</th>
     <th title="Field #2">Number</th>
@@ -21942,7 +21940,7 @@ function lab2num()
         if (td) {
             txtValue = td.textContent || td.innerText;
           if (txtValue.toUpperCase().indexOf(filter)  > -1) {
-            alert("HELLLO")
+
             tr[i].style.display = "";
           } else {
             tr[i].style.display = "none";
@@ -21961,20 +21959,20 @@ function lab2let()
           
           input = document.getElementById("myInput");
           filter = input.value.toUpperCase();
-          tab
           table = document.getElementById("myTable");
           tr = table.getElementsByTagName("tr");
           for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[0];
             if (td) {
-                alert("Hello")
-                txtValue = document.createTextNode(td);
+                var h = document.createElement("H1")
+                var h1 = document.createTextNode("H1");
+                var txtValue2 = document.createTextNode(tr[i]);
               var  txtValue1 = td.textContent || td.innerText;
             if (txtValue1.toUpperCase().indexOf(filter) > -1) {
-                  alert("Hello")
-                document.getElementById("list").appendChild(txtValue);
-                alert("Hello1111111111111")
-                  
+                h.appendChild(td);
+                document.getElementById("list").appendChild(h);
+                document.getElementById("list").appendChild(tr[i], " ");
+                tr[i].style.display = " ";     
                       } else {
                 tr[i].style.display = "none";
               }

@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="header">
-<h2>Pokedex featuring</h2>
+<h2>Pokedex/h2>
 </div>
 </head>
 <link rel="stylesheet" href="styles.css">
@@ -11,8 +11,8 @@
 <body>
 <class="search">
     
-    <input class = "search" class="popuptext" class="popup" type="search" id="myInput" oninput="myFunction2()"placeholder = "Search by Letter" > 
-    <input class= "search1" type="search" id="myInput1" oninput="lab2()" placeholder = "Search By Number">
+    <input class = "search" class="popuptext" class="popup" type="search" id="myInput" oninput="lab2let()"placeholder = "Search by Letter" > 
+    <input class= "search1" type="search" id="myInput1" oninput="lab2num()" placeholder = "Search By Number">
     
 <p id="demo1"></p>
 <script>
@@ -21,14 +21,8 @@
     }
     </script>
 
-<div class="myDiv">
-    <h2>This is a heading in a div element</h2>
-    <p>This is some text in a div element.</p>
-  </div>
-
-
-<div>
-<table id="myTable">
+<div id="myTable">
+<table >
     <thead><tr><th title="Field #1">Name</th>
     <th title="Field #2">Number</th>
     <th title="Field #3">Generation</th>
@@ -21928,7 +21922,7 @@
 </script>
 
 <script>
-function lab2()
+function lab2num()
 {
 
     var input, filter, table, tr, td, i, txtValue;
@@ -21936,7 +21930,7 @@ function lab2()
       filter = input.value.toUpperCase();
       table = document.getElementById("myTable");
       tr = table.getElementsByTagName("tr");
-      for (i = 0; i < 22; i++) {
+      for (i = 0; i <tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[1];
         if (td) {
             txtValue = td.textContent || td.innerText;
@@ -21951,7 +21945,32 @@ function lab2()
 }
 </script>
 
+<script>
+function lab2let()
+{
+    var input, filter, table, tr, td, i, txtValue, txValue1, new;
+          var popup = document.getElementById("myInput");
+          
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = document.createTextNode(td);
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                document.body.appendChild(txtValue);
+                tr[i].style.display = "";
+                      } else {
+                tr[i].style.display = "none";
+              }
+            }       
+       9   }
 
+
+}
+</script>
 <p><head>References</head>  </p>
 <p><a  href = https://www.kaggle.com/kvpratama/pokemon-images-dataset> Pokemon Data Set </a> </p>
 <p> <a href= https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet> Pokemon Excel </a> </p>

@@ -14,8 +14,9 @@
     <input class = "search" class="popuptext" class="popup" type="search" id="myInput" oninput="lab2let()"placeholder = "Search by Letter" > 
     <input class= "search1" type="search" id="myInput1" oninput="lab2num()" placeholder = "Search By Number">
     
+<p id="demo1"> </p>
+<p id="demo2"></p>
 <p id="demo"></p>
-
 <div class = "a">
 <ol id = "list">
 </ol>
@@ -21958,35 +21959,79 @@ function lab2let()
 
     var input, filter, table, tr, td, td1, i, txtValue, txValue1,h,j,h1;
  
-          var popup = document.getElementById("myInput");
+          var popup = document.getElement;
+          var list1 = document.getElementById("list");
+          //create h Element again 
           h = document.createElement("H1")
+          //for removing child node of "list" ordered list
+          var item = document.getElementById("list").childNodes[0];
+          item.parentNode.removeChild(item);
+        
+         //length of H1 displayed in first line
+          var nodelist = document.getElementsByTagName("H1").length;
+          document.getElementById("demo1").innerHTML = nodelist;
+         
+          //REMOVING CHILD ELEMENT BY TAGNAME FROM H1
+          var nodes = document.getElementsByTagName("H1");
+          len = document.getElementsByTagName("H1").length
+         
+          for (var j = 0; j < len; j++) {
+           var node = nodes[j];
+           while (node.firstChild) 
+           {
+               
+               node.removeChild(node.childnodes[j]);
+            } 
+               }
+          //REMOVING CHILD NODE
+        //h1 length in second line
+        var nodelist2 = document.getElementsByTagName("H1").length;
+        document.getElementById("demo2").innerHTML = nodelist2;
+        
           input = document.getElementById("myInput");
           filter = input.value.toUpperCase();
           table = document.getElementById("myTable");
           tr = table.getElementsByTagName("tr");
           for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
+          td = tr[i].getElementsByTagName("td")[0];
             if (td) {
                 td1=td1+1;
-                var h1 = document.createElement("H1");
                 var txtValue2 = document.createTextNode(tr[i]);
                 txtValue1 = td.textContent || td.innerText;
             if (txtValue1.toUpperCase().indexOf(filter) > -1) 
            {
-                h.appendChild(tr[i]);
-                document.getElementById("list").appendChild(h);
-                
-            } else { 
                
+               //create Element H1 again
+               h = document.createElement("H1")
+
+               //For appending Child to H1 node and later appending it to "list" ordered list
+                h.appendChild(td);
+                document.getElementById("list").appendChild(h);
+                document.getElementById("list").appendChild(tr[i]);
+                
+                //remove h1 children as 49 stays 49 even after i delete table,
+                //each time i type, the table get deleted as the function gets called again!
+                
+                //length of node "H1" in third line
+                var nodelist = document.getElementsByTagName("H1").length;
+                document.getElementById("demo").innerHTML = nodelist;             
+                  
+                
+                  } 
+            else { 
+                
                 tr[i].style.display = "none";
               }
-            }   
-        
-           
+          
+            }         
+                  
           }
-
-        
-
+          var myobj = document.getElementById("myTable");
+          myobj.remove();
+          var myobj1 = document.getElementsByTagName("H1");
+          myobj1.remove();
+          
+          
 }
 </script>
 <p><head>References</head>  </p>

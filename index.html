@@ -16,7 +16,9 @@
     
 <p id="demo1"> </p>
 <p id="demo2"></p>
+<p id="demo3"></p>
 <p id="demo"></p>
+<p id="demo4"></p>
 <div class = "a">
 <ol id = "list">
 </ol>
@@ -21964,16 +21966,29 @@ function lab2let()
           //create h Element again 
           h = document.createElement("H1")
           //for removing child node of "list" ordered list
-          var item = document.getElementById("list").childNodes[0];
-          item.parentNode.removeChild(item);
+        
+          var list = document.getElementById("list");
+          len = document.getElementById("list").childElementCount;
+         
+           for (var j = 0; j < len; j++) {
+            list.removeChild(list.childNodes[j]);
+            }
+
+          //length of list after deletion in 5th line
+          var nodelist4 = document.getElementById("list").childElementCount;
+            document.getElementById("demo4").innerHTML = nodelist4;  
+          // len
+         // var item = document.getElementById("list").childNodes[0];
+          //item.parentNode.removeChild(item);
+         //removing
         
          //length of H1 displayed in first line
           var nodelist = document.getElementsByTagName("H1").length;
           document.getElementById("demo1").innerHTML = nodelist;
          
-          //REMOVING CHILD ELEMENT BY TAGNAME FROM H1
-          var nodes = document.getElementsByTagName("H1");
-          len = document.getElementsByTagName("H1").length
+         //REMOVING CHILD ELEMENT BY TAGNAME FROM H1
+         var nodes = document.getElementsByTagName("H1");
+          len = document.getElementsByTagName("H1").length;
          
           for (var j = 0; j < len; j++) {
            var node = nodes[j];
@@ -21984,6 +21999,8 @@ function lab2let()
             } 
                }
           //REMOVING CHILD NODE
+
+          
         //h1 length in second line
         var nodelist2 = document.getElementsByTagName("H1").length;
         document.getElementById("demo2").innerHTML = nodelist2;
@@ -22001,10 +22018,18 @@ function lab2let()
             if (txtValue1.toUpperCase().indexOf(filter) > -1) 
            {
                
+               
+                //length of node "H1" in third line
+            //   var nodelist3 = document.getElementById("list").childElementCount;
+              //  document.getElementById("demo3").innerHTML = nodelist3;  
+                
+                var nodelist3 = document.getElementsByTagName("H1").length;
+                document.getElementById("demo3").innerHTML = nodelist3;   
+               
+               //For appending Child to H1 node and later appending it to "list" ordered list
+               
                //create Element H1 again
                h = document.createElement("H1")
-
-               //For appending Child to H1 node and later appending it to "list" ordered list
                 h.appendChild(td);
                 document.getElementById("list").appendChild(h);
                 document.getElementById("list").appendChild(tr[i]);
@@ -22012,7 +22037,7 @@ function lab2let()
                 //remove h1 children as 49 stays 49 even after i delete table,
                 //each time i type, the table get deleted as the function gets called again!
                 
-                //length of node "H1" in third line
+                //length of node "H1" in fourth line
                 var nodelist = document.getElementsByTagName("H1").length;
                 document.getElementById("demo").innerHTML = nodelist;             
                   
@@ -22028,7 +22053,7 @@ function lab2let()
           }
           var myobj = document.getElementById("myTable");
           myobj.remove();
-          var myobj1 = document.getElementsByTagName("H1");
+          var myobj1 = document.getElementsById("H1");
           myobj1.remove();
           
           

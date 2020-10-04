@@ -11,7 +11,7 @@
 <body>
 <class="search">
     
-    <input class = "search" class="popuptext" class="popup" type="search" id="myInput" oninput="lab2let()"placeholder = "Search by Letter" > 
+    <input class = "search" class="popuptext" class="popup" type="search" id="myInput" oninput="myFunction8()" placeholder = "Search by Letter" > 
     <input class= "search1" type="search" id="myInput1" oninput="lab2num()" placeholder = "Search By Number">
     
 <p id="demo1"> </p>
@@ -19,11 +19,18 @@
 <p id="demo3"></p>
 <p id="demo"></p>
 <p id="demo4"></p>
+<p id="demo5"></p>
 <div class = "a">
 <ol id = "list">
 </ol>
 
 </div>
+
+<div class = "a">
+    <ol id = "list1">
+    </ol>
+    
+    </div>
 <script>
     function myFunction1() {
       document.getElementById("demo1").innerHTML = "Hello";
@@ -21850,28 +21857,101 @@
         function myFunction2() {
           var input, filter, table, tr, td, i, txtValue, txValue1;
           var popup = document.getElementById("myInput");
-          
+          document.getElementById("myTable").style.visibility = "hidden"
           input = document.getElementById("myInput");
           filter = input.value.toUpperCase();
           table = document.getElementById("myTable");
           tr = table.getElementsByTagName("tr");
+          console.log();
           for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[0];
             if (td) {
               txtValue = td.textContent || td.innerText;
               if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-                alert(tr[i].textContent);
+               var x = document.getElementById('myTable');
+              document.getElementById("myTable").style.visibility = "visible";
+                x.style.display = 'block'
+               tr[i].style.display = "";
+
+            //  document.getElementById("list").appendChild(tr[i]);
+              //  alert(tr[i].textContent);
               } else {
                 tr[i].style.display = "none";
               }
+              if (filter == 0){
+                document.getElementById("myTable").style.visibility = "hidden"
+                
+              }
             }       
           }
-
+         
+    
         }
         
 </script>
+<script>
+    function myFunction8() {
+      var input, filter, table, tr, td, i, txtValue, txValue1;
+      var nodelist5 = document.getElementById("list").childElementCount;
+         document.getElementById("demo3").innerHTML = nodelist5;
+      var popup = document.getElementById("myInput");
+      document.getElementById("myTable").style.visibility = "hidden"
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+     
+    //  var nodes = document.getElementById("list");
+      //var len = document.getElementById("list").childElementCount;
+         
+       //  for (var j = 0; j < 50; j++) {
+         // var node = nodes[j];
+          //while (node.firstChild) 
+           //{
+               
+             //  node.parentNode.removeChild(node.childnodes[j]);
+            //} 
+          // }
+         // var list = document.getElementById("list");
+      //  len = document.getElementById("list").childElementCount;
+       //   for (var j = 0; j < len; j++) {
+         //   list.removeChild(list.childNodes[j]);
+         //   }
+          
+      //console.log();
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+           var x = document.getElementById('myTable');
+          document.getElementById("myTable").style.visibility = "visible";
+ len = document.getElementById("list").childElementCount;
+          for (var j = 0; j < len; j++) {
+            list.removeChild(list.childNodes[j]);
+            }
+            //x.style.display = 'block'
+          // tr[i].style.display = "";
+          var nodelist1 = document.getElementById("list").childElementCount;
+         document.getElementById("demo2").innerHTML = nodelist1;
+        document.getElementById("list").appendChild(tr[i]);
+        var nodelist4 = document.getElementById("list").childElementCount;
+         document.getElementById("demo4").innerHTML = nodelist4;
+          //  alert(tr[i].textContent);
+          } else {
+            tr[i].style.display = "none";
+          }
+          if (filter == 0){
+            document.getElementById("myTable").style.visibility = "hidden"
+            
+          }
+        }       
+      }
+     
 
+    }
+    
+</script>
 <p id="demo4"></p>
 
 <script>
@@ -21944,7 +22024,11 @@ function lab2num()
         if (td) {
             txtValue = td.textContent || td.innerText;
           if (txtValue.toUpperCase().indexOf(filter)  > -1) {
-
+            h = document.createElement("H1")
+             h.appendChild(td);
+               document.getElementById("myTable").appendChild(h);
+                document.getElementById("myTable").appendChild(tr[i]);
+                document.getElementById("myTable").style.visibility = "hidden"
             tr[i].style.display = "";
           } else {
             tr[i].style.display = "none";
@@ -21960,45 +22044,45 @@ function lab2let()
 {
 
     var input, filter, table, tr, td, td1, i, txtValue, txValue1,h,j,h1;
- 
+          
           var popup = document.getElement;
           var list1 = document.getElementById("list");
           //create h Element again 
           h = document.createElement("H1")
+         
           //for removing child node of "list" ordered list
         
-          var list = document.getElementById("list");
-          len = document.getElementById("list").childElementCount;
-         
-           for (var j = 0; j < len; j++) {
-            list.removeChild(list.childNodes[j]);
-            }
+        //var list = document.getElementById("list");
+        //len = document.getElementById("list").childElementCount;
+          //for (var j = 0; j < len; j++) {
+            //list.removeChild(list.childNodes[j]);
+            //}
 
           //length of list after deletion in 5th line
-          var nodelist4 = document.getElementById("list").childElementCount;
-            document.getElementById("demo4").innerHTML = nodelist4;  
+         //var nodelist4 = document.getElementById("list").childElementCount;
+         //   document.getElementById("demo4").innerHTML = nodelist4;  
           // len
          // var item = document.getElementById("list").childNodes[0];
           //item.parentNode.removeChild(item);
          //removing
         
-         //length of H1 displayed in first line
+  ///////////LENGTH OF H1 DISPLAYED IN FIRST LINE///////////////////
           var nodelist = document.getElementsByTagName("H1").length;
           document.getElementById("demo1").innerHTML = nodelist;
          
-         //REMOVING CHILD ELEMENT BY TAGNAME FROM H1
-         var nodes = document.getElementsByTagName("H1");
-          len = document.getElementsByTagName("H1").length;
+ ////////////REMOVING CHILD ELEMENT BY TAGNAME FROM H1///////////////
+     //     var nodes = document.getElementsByTagName("H1");
+       //   len = document.getElementsByTagName("H1").length;
          
-          for (var j = 0; j < len; j++) {
-           var node = nodes[j];
-           while (node.firstChild) 
-           {
+         // for (var j = 0; j < len; j++) {
+          //var node = nodes[j];
+          //while (node.firstChild) 
+           //{
                
-               node.removeChild(node.childnodes[j]);
-            } 
-               }
-          //REMOVING CHILD NODE
+             //  node.parentNode.removeChild(node.childnodes[j]);
+            //} 
+          // }
+/////////////////REMOVING CHILD NODE//////////////////////////////////
 
           
         //h1 length in second line
@@ -22012,28 +22096,47 @@ function lab2let()
           for (i = 0; i < tr.length; i++) {
           td = tr[i].getElementsByTagName("td")[0];
             if (td) {
-                td1=td1+1;
-                var txtValue2 = document.createTextNode(tr[i]);
+                
+          //      td1=td1+1;
+              //  var txtValue2 = document.createTextNode(tr[i]);
                 txtValue1 = td.textContent || td.innerText;
             if (txtValue1.toUpperCase().indexOf(filter) > -1) 
            {
-               
-               
-                //length of node "H1" in third line
-            //   var nodelist3 = document.getElementById("list").childElementCount;
-              //  document.getElementById("demo3").innerHTML = nodelist3;  
+             //length of node "H1" in third line
+           // var nodelist3 = document.getElementById("list").childElementCount;
+           // document.getElementById("demo3").innerHTML = nodelist3;  
                 
-                var nodelist3 = document.getElementsByTagName("H1").length;
-                document.getElementById("demo3").innerHTML = nodelist3;   
-               
-               //For appending Child to H1 node and later appending it to "list" ordered list
-               
-               //create Element H1 again
-               h = document.createElement("H1")
-                h.appendChild(td);
-                document.getElementById("list").appendChild(h);
-                document.getElementById("list").appendChild(tr[i]);
+              var nodelist3 = document.getElementsByTagName("H1").length;
+             document.getElementById("demo3").innerHTML = nodelist3;   
+             tr[i].style.display = " ";
+              //For appending Child to H1 node and later appending it to "list" ordered list
+             
+              //create Element H1 again
+              // h = document.createElement("H1")
+             //  h1 = document.createElement("H")
+              // h1 = document.createElement("H")
+              //  h.appendChild(td);
+               // document.getElementById("list").appendChild(h);
+                //document.getElementById("list").appendChild(tr[i]);
                 
+                var elmnt = document.createElement("H1");
+              var textnode = document.createTextNode(td);
+               elmnt.appendChild(textnode);
+
+               var item = document.getElementById("list");
+         // item.replaceChild(elmnt, item.childNodes[i]);
+}
+//  var elmnt = document.createElement("H1");
+           //document.getElementById("list").appendChild(tr[i]);
+          //var textnode = document.createTextNode(td);
+              // elmnt.appendChild(td);
+            //  document.getElementById("list").appendChild(elmnt);
+            //  document.getElementById("list").appendChild(tr[i]);
+            //   var item = document.getElementById("list");
+             //item.replaceChild(elmnt, item.childNodes[i]);
+        //  document.getElementById("list").appendChild(tr[i]);
+
+              // h1.replaceChild(h, h1.childNodes[0]);
                 //remove h1 children as 49 stays 49 even after i delete table,
                 //each time i type, the table get deleted as the function gets called again!
                 
@@ -22051,11 +22154,13 @@ function lab2let()
             }         
                   
           }
-          var myobj = document.getElementById("myTable");
-          myobj.remove();
-          var myobj1 = document.getElementsById("H1");
-          myobj1.remove();
           
+         //var myobj = document.getElementById("myTable");
+        //myobj.remove();
+         // var myobj1 = document.getElementsById("H1");
+          //myobj1.remove();
+          var nodelist5 = document.getElementsByTagName("H1").length;
+          document.getElementById("demo5").innerHTML = nodelist5;   
           
 }
 </script>

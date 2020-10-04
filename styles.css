@@ -95,8 +95,18 @@ ul {
   p.solid {border-style: ridge;}
   border: {1px solid red};
 }
+
+#list {
+
+  background:#993366
+ 
+}
+ol li {
+  background: #cce5ff;
+  margin: 5px;
+}
 figcaption {
-  background-color: #A9A9A9;
+  background-color: #99ff66;
   color: black;
   font-style: bold;
   padding: 2px;

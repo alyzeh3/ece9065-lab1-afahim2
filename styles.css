@@ -1,10 +1,24 @@
 <!DOCTYPE style>
 {<style>}
+.search {
+  overflow: hidden;
+  background-color:  #ecf2f9
+  padding: 50px 50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
 
 .popup {
   position: relative;
   display: inline-block;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
 }
 
 .popup .popuptext {
@@ -14,7 +28,7 @@
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 8px 0;
+  padding: 8px;
   position: absolute;
   z-index: 1;
   bottom: 125%;
@@ -98,9 +112,21 @@ ul {
 
 #list {
 
-  background:#993366
- 
+  background:#0a616d
 }
+
+#myTable {
+
+  background:#0a616d
+  
+}
+
+#demo6 {
+
+  background:#0a616d
+  
+}
+
 ol li {
   background: #cce5ff;
   margin: 5px;
@@ -124,11 +150,6 @@ ul {
 
     list-style: none
 }
-.search {
-  overflow: hidden;
-  background-color:  #ecf2f9
-  padding: 50px 50px;
- }
 
 .search1 {
   overflow: hidden;

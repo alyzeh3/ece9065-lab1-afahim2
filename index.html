@@ -12,7 +12,7 @@
 <class="search">
     
     <input class = "search" type="search" type="text" id="myInput" oninput="myFunction2()" placeholder = "Search by Letter" maxlength="20"> 
-    <input class= "search" type="search" id="myInput1" oninput="myFunction10()" placeholder = "Search By Number" maxlength="20">
+    <input class= "search" type="search" id="myInput1" oninput="myFunction11()" placeholder = "Search By Number" maxlength="20">
     
 <p id="demo1"> </p>
 <p id="demo2"></p>
@@ -20,8 +20,9 @@
 <p id="demo"></p>
 <p id="demo4"></p>
 <p id="demo5"></p>
-<p id="demo6" hidden> HELLOOOOOOOOOOOOOOOOO</p>
+
 <div class = "a">
+
 <ol id = "list">
 </ol>
 
@@ -21853,10 +21854,7 @@
     .</figcaption>
 </figure>
 </ul>
-    
-<div class="popuptext" id="myPopup">A Simple Popup!</div>
-  
-    <script>
+<script>
         function myFunction2() {
           var input, filter, table, tr, td, i, txtValue, txValue1;
           var popup = document.getElementById("myInput");
@@ -21865,10 +21863,10 @@
           filter = input.value.toUpperCase();
           table = document.getElementById("myTable");
           tr = table.getElementsByTagName("tr");
-          var len = filter.length;
-          var popup = document.getElementById("myPopup");
-          popup.classList.toggle("show");
-          console.log();
+         // var len = filter.length;
+          //var popup = document.getElementById("myPopup");
+         // popup.classList.toggle("show");
+         
           for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[0];
            
@@ -21895,6 +21893,84 @@
     
         }
         
+</script>
+<script>
+    function myFunction11() {
+      var input, filter, table, tr, td, i, txtValue, txValue1;
+      var popup = document.getElementById("myInput");
+      document.getElementById("myTable").style.visibility = "hidden"
+      input = document.getElementById("myInput1");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+     // var len = filter.length;
+      //var popup = document.getElementById("myPopup");
+     // popup.classList.toggle("show");
+     
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+       
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            var x = document.getElementById('myTable');
+            document.getElementById("myTable").style.visibility = "visible";
+            x.style.display = 'block'
+            tr[i].style.display = "";
+
+        //  document.getElementById("list").appendChild(tr[i]);
+          //  alert(tr[i].textContent);
+          } else {
+            tr[i].style.display = "none";
+          }
+          if (filter == 0){
+            document.getElementById("myTable").style.visibility = "hidden"
+            
+          }
+        }       
+      }
+     
+
+    }
+    
+</script>
+
+<script>
+    function myFunction10() {
+      var input, filter, table, tr, td, i, txtValue, txValue1;
+      var popup = document.getElementById("myInput1");
+    document.getElementById("myTable").style.visibility = "hidden"
+      input = document.getElementById("myInput1");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    //  var node = "Cannot Input More than 20 Characters"
+     // len = filter.length;
+      for (i = 0; i < 22; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+           // var x = document.getElementById('myTable');
+            document.getElementById("myTable").style.visibility = "visible";
+             x.style.display = 'block'
+            tr[i].style.display = "";
+
+        //  document.getElementById("list").appendChild(tr[i]);
+          //  alert(tr[i].textContent);
+          } else {
+            tr[i].style.display = "none";
+          }
+          if (filter == 0){
+            document.getElementById("myTable").style.visibility = "hidden"
+            
+          }
+        }       
+      }
+     
+
+    }
+    
 </script>
 <script>
     function myFunction8() {
@@ -21960,52 +22036,14 @@
     
 </script>
 
-<script>
-    function myFunction10() {
-      var input, filter, table, tr, td, i, txtValue, txValue1;
-      var popup = document.getElementById("myInput1");
-    document.getElementById("myTable").style.visibility = "hidden"
-      input = document.getElementById("myInput1");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("myTable");
-      tr = table.getElementsByTagName("tr");
-      var node = "Cannot Input More than 20 Characters"
-      len = filter.length;
-      for (i = 0; i < 22; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            var x = document.getElementById('myTable');
-            document.getElementById("myTable").style.visibility = "visible";
-          x.style.display = 'block'
-            tr[i].style.display = "";
 
-        //  document.getElementById("list").appendChild(tr[i]);
-          //  alert(tr[i].textContent);
-          } else {
-            tr[i].style.display = "none";
-          }
-          if (filter == 0){
-            document.getElementById("myTable").style.visibility = "hidden"
-            
-          }
-        }       
-      }
-     
-
-    }
-    
-</script>
 <p id="demo4"></p>
 
 <script>
     function myFunction4(input1) {
-        
-        
         return input1 = document.getElementById("myInput1");
+    }
 </script>
-
 
 <script>
     function myFunction6() {
@@ -22027,7 +22065,7 @@
                 tr1[j].style.display = "none";
               }
         }
-        
+    }
 </script>
 
 <script>
@@ -22186,8 +22224,8 @@ function lab2let()
                 //each time i type, the table get deleted as the function gets called again!
                 
                 //length of node "H1" in fourth line
-                var nodelist = document.getElementsByTagName("H1").length;
-                document.getElementById("demo").innerHTML = nodelist;             
+              //  var nodelist = document.getElementsByTagName("H1").length;
+             //   document.getElementById("demo").innerHTML = nodelist;             
                   
                 
                   } 
@@ -22206,8 +22244,6 @@ function lab2let()
           //myobj1.remove();
           var nodelist5 = document.getElementsByTagName("H1").length;
           document.getElementById("demo5").innerHTML = nodelist5;   
-          
-}
 </script>
 <p><head>References</head>  </p>
 <p><a  href = https://www.kaggle.com/kvpratama/pokemon-images-dataset> Pokemon Data Set </a> </p>

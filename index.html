@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">>
 <div class="header">
-<h2>Pokedex</div></h2>
+<h2>Pokédex</div></h2>
 </div>
 </head>
 <link rel="stylesheet" href="styles.css">
@@ -11,8 +11,8 @@
 <body>
 <class="search">
     
-    <input class = "search" class="popuptext" class="popup" type="search" id="myInput" oninput="myFunction2()" placeholder = "Search by Letter" > 
-    <input class= "search" type="search" id="myInput1" oninput="myFunction10()" placeholder = "Search By Number">
+    <input class = "search" type="search" type="text" id="myInput" oninput="myFunction2()" placeholder = "Search by Letter" maxlength="20"> 
+    <input class= "search" type="search" id="myInput1" oninput="myFunction10()" placeholder = "Search By Number" maxlength="20">
     
 <p id="demo1"> </p>
 <p id="demo2"></p>
@@ -20,6 +20,7 @@
 <p id="demo"></p>
 <p id="demo4"></p>
 <p id="demo5"></p>
+<p id="demo6" hidden> HELLOOOOOOOOOOOOOOOOO</p>
 <div class = "a">
 <ol id = "list">
 </ol>
@@ -21853,6 +21854,8 @@
 </figure>
 </ul>
     
+<div class="popuptext" id="myPopup">A Simple Popup!</div>
+  
     <script>
         function myFunction2() {
           var input, filter, table, tr, td, i, txtValue, txValue1;
@@ -21862,9 +21865,13 @@
           filter = input.value.toUpperCase();
           table = document.getElementById("myTable");
           tr = table.getElementsByTagName("tr");
+          var len = filter.length;
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
           console.log();
           for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[0];
+           
             if (td) {
               txtValue = td.textContent || td.innerText;
               if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -21962,15 +21969,16 @@
       filter = input.value.toUpperCase();
       table = document.getElementById("myTable");
       tr = table.getElementsByTagName("tr");
-      console.log();
-      for (i = 0; i < tr.length; i++) {
+      var node = "Cannot Input More than 20 Characters"
+      len = filter.length;
+      for (i = 0; i < 22; i++) {
         td = tr[i].getElementsByTagName("td")[1];
         if (td) {
           txtValue = td.textContent || td.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
             var x = document.getElementById('myTable');
             document.getElementById("myTable").style.visibility = "visible";
-            x.style.display = 'block'
+          x.style.display = 'block'
             tr[i].style.display = "";
 
         //  document.getElementById("list").appendChild(tr[i]);

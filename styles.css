@@ -146,6 +146,9 @@ figcaption {
   padding: 2px;
   text-align: center;
 }
+.yes{
+	list-style: none;
+}
 img {
         padding: 1px;
         border: 1px #A9A9A9;

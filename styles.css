@@ -131,6 +131,10 @@ ul {
   background: #ff3333
   
 }
+.ali {
+
+  text-align: right;
+}
 ol li {
   background: #cce5ff;
   margin: 5px;
